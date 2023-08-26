@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PATIENT DETAILS(by the receptionist)</title>
+</head>
+<body>
+    <h1>Enter Your Health Information</h1>
+    <form action="#" method="post" onsubmit="return validateForm()">
+<label for="visit code">visit code:</label>
+        <input type="number" id="visit code" name="visit code" required><br><br>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="height">Height (in cm):</label>
+        <input type="number" id="height" name="height" required><br><br>
+
+        <label for="age">Age (in years):</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="temperature">Temperature (in °C):</label>
+        <input type="number" id="temperature" name="temperature" required><br><br>
+
+        <label for="weight">Body Weight (in kg):</label>
+        <input type="number" id="weight" name="weight" required><br><br>
+
+        <label for="disease">Disease or Infection (if any):</label>
+        <input type="text" id="disease" name="disease"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm() {
+            var age = document.getElementById("age").value;
+            var temperature = document.getElementById("temperature").value;
+            var weight = document.getElementById("weight").value;
+            var height = document.getElementById("height").value;
+            
+            if (isNaN(age) || isNaN(temperature) || isNaN(weight) || isNaN(height)) {
+                alert("Age, temperature, weight, and height must be numbers.");
+                return false;
+            }
+
+            // You can add additional validation for other fields as needed.
+
+            return true;
+        }
+    </script>
+</body>
+</html>

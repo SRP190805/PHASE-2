@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Receptionist</title>
+
+  
+</head><body>
+<h1>Enter patient Information</h1>
+
+<form id="visitForm" action="details.html" method="post"> <label for="visitCode">Visit Code:</label> <input id="visitCode" name="visitCode" type="text"><br>
+  <br>
+  <label for="name">Name:</label> <input id="name" name="name" type="text"><br>
+  <br>
+  <label for="age">Age:</label> <input id="age" name="age" type="text"><br>
+  <br>
+  <label for="temperature">Temperature:</label> <input id="temperature" name="temperature" type="text"><br>
+  <br>
+  <label for="weight">Weight:</label> <input id="weight" name="weight" type="text"><br>
+  <br>
+  <label for="disease/addiction">Disease/Addiction:</label> <input id="disease/addiction" name="disease/addiction" type="text"><br>
+  <br>
+  <a href="details.html"><input value="Submit" type="submit"></a> <a href="details.html">goto</a> </form>
+
+<script>
+        document.getElementById("visitForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const formData = {
+                visitCode: document.getElementById("visitCode").value,
+                name: document.getElementById("name").value,
+                age: document.getElementById("age").value,
+                temperature: document.getElementById("temperature").value,
+                weight: document.getElementById("weight").value,
+                disease: document.getElementById("disease/addiction").value
+            };
+
+            localStorage.setItem("formData", JSON.stringify(formData));
+
+            window.location.href = "details.html";
+
+        });
+    </script>
+</body></html>

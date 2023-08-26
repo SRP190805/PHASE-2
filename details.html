@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html><head>
+  <title>Display Page</title>
+
+  
+</head><body>
+<h1>Displaying Visit Information</h1>
+
+<p>Visit Code: <span id="display-visitCode"></span></p>
+
+<p>Name: <span id="display-name"></span></p>
+
+<p>Age: <span id="display-age"></span></p>
+
+<p>Temperature: <span id="display-temperature"></span></p>
+
+<p>Weight: <span id="display-weight"></span></p>
+
+<p>Disease/Addiction: <span id="display-disease/addiction"></span></p>
+
+<script>
+        const storedData = localStorage.getItem("formData");
+        const formData = JSON.parse(storedData);
+
+        document.getElementById("display-visitCode").textContent = formData.visitCode;
+        document.getElementById("display-name").textContent = formData.name;
+        document.getElementById("display-age").textContent = formData.age;
+        document.getElementById("display-temperature").textContent = formData.temperature;
+        document.getElementById("display-weight").textContent = formData.weight;
+        document.getElementById("display-disease").textContent = formData.disease/addiction;
+    </script>
+</body></html>
